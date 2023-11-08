@@ -1,0 +1,247 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6C18B165-DAD7-48F9-938B-0B6424D8B51D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>QuanLyVanBan</RootNamespace>
+    <AssemblyName>QuanLyVanBan</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.2.0.151\lib\net461\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus, Version=6.2.10.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.6.2.10\lib\net462\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus.Interfaces, Version=6.1.1.0, Culture=neutral, PublicKeyToken=a694d7f3b0907a61, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.Interfaces.6.1.1\lib\net462\EPPlus.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus.System.Drawing, Version=6.1.1.0, Culture=neutral, PublicKeyToken=2308d35469c9bac0, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.System.Drawing.6.1.1\lib\net462\EPPlus.System.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=1.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IO.RecyclableMemoryStream.1.4.1\lib\net46\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1001\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Threading.Tasks" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Authentications\CustomIdentity.cs" />
+    <Compile Include="Authentications\CustomPrincipal.cs" />
+    <Compile Include="Commons\Constant.cs" />
+    <Compile Include="DTOs\CongVanDenDto.cs" />
+    <Compile Include="DTOs\CongVanDiDto.cs" />
+    <Compile Include="DTOs\TaiKhoanDto.cs" />
+    <Compile Include="DTOs\YeuCauVBDiDto.cs" />
+    <Compile Include="Models\CurrentUser.cs" />
+    <Compile Include="Repositories\IBaseRepository.cs" />
+    <Compile Include="Repositories\PhongBanRepository.cs" />
+    <Compile Include="Repositories\SaoLuuRepository.cs" />
+    <Compile Include="Repositories\ThongKeRepository.cs" />
+    <Compile Include="Views\CongVanDenForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\CongVanDenForm.Designer.cs">
+      <DependentUpon>CongVanDenForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CongVanDiForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\CongVanDiForm.Designer.cs">
+      <DependentUpon>CongVanDiForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DoiMatKhauForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\DoiMatKhauForm.Designer.cs">
+      <DependentUpon>DoiMatKhauForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GiaoVanBanDen.cs" />
+    <Compile Include="Models\TaiKhoan.cs" />
+    <Compile Include="Models\PhongBan.cs" />
+    <Compile Include="Models\QuanLyVanBanDen.cs" />
+    <Compile Include="Models\QuanLyVanBanDi.cs" />
+    <Compile Include="Models\YeuCauGuiVanBanDi.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Connection.cs" />
+    <Compile Include="Repositories\QuanLyVanBanDenRepository.cs" />
+    <Compile Include="Repositories\QuanLyVanBanDiRepository.cs" />
+    <Compile Include="Repositories\TaiKhoanRepository.cs" />
+    <Compile Include="Repositories\YeuCauGuiVanBanDiRepository.cs" />
+    <Compile Include="Views\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\MainForm1.Designer.cs">
+      <DependentUpon>MainForm1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PhongBanForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\PhongBanForm.Designer.cs">
+      <DependentUpon>PhongBanForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NguoiDungForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\NguoiDungForm.Designer.cs">
+      <DependentUpon>NguoiDungForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SaoLuuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\SaoLuuForm.Designer.cs">
+      <DependentUpon>SaoLuuForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TaiKhoanForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\TaiKhoanForm.Designer.cs">
+      <DependentUpon>TaiKhoanForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ThongKeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ThongKeForm.Designer.cs">
+      <DependentUpon>ThongKeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\YeuCauGuiVanBanForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\YeuCauGuiVanBanForm.Designer.cs">
+      <DependentUpon>YeuCauGuiVanBanForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Views\CongVanDenForm.resx">
+      <DependentUpon>CongVanDenForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CongVanDiForm.resx">
+      <DependentUpon>CongVanDiForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\DoiMatKhauForm.resx">
+      <DependentUpon>DoiMatKhauForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Views\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MainForm1.resx">
+      <DependentUpon>MainForm1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PhongBanForm.resx">
+      <DependentUpon>PhongBanForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\NguoiDungForm.resx">
+      <DependentUpon>NguoiDungForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SaoLuuForm.resx">
+      <DependentUpon>SaoLuuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\TaiKhoanForm.resx">
+      <DependentUpon>TaiKhoanForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ThongKeForm.resx">
+      <DependentUpon>ThongKeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\YeuCauGuiVanBanForm.resx">
+      <DependentUpon>YeuCauGuiVanBanForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\DataSources\QuanLyVanBan.Models.NguoiDung.datasource" />
+    <None Include="Properties\DataSources\QuanLyVanBan.Models.PhongBan.datasource" />
+    <None Include="Properties\DataSources\QuanLyVanBan.Models.QuanLyVanBanDen.datasource" />
+    <None Include="Properties\DataSources\QuanLyVanBan.Models.QuanLyVanBanDi.datasource" />
+    <None Include="Properties\DataSources\QuanLyVanBan.Models.TaiKhoan.datasource" />
+    <None Include="Properties\DataSources\QuanLyVanBan.Models.YeuCauGuiVanBanDi.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
